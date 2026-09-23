@@ -1,16 +1,28 @@
-## Problem: Two Sum (Easy)
+#include <stdio.h>
 
-**Link:** https://leetcode.com/problems/two-sum/
+int main() {
+    int nums[] = {2, 7, 11, 15};
+    int target = 9;
+    int n = 4;
 
-### Approach
+    for (int i = 0; i < n; i++) {
+        for (int j = i + 1; j < n; j++) {
+            if (nums[i] + nums[j] == target) {
+                printf("[%d, %d]\n", i, j);
+                return 0;
+            }
+        }
+    }
 
-Use two nested loops to check every pair of elements. If the sum of a pair equals the target, return their indices.
+    return 0;
+}
 
-### Complexity
+/*
+Test Case 1:
+Input: nums = [2,7,11,15], target = 9
+Expected Output: [0,1]
 
-- Time: O(n^2)
-- Space: O(1)
-
-### Notes
-
-Tested with a normal case and a duplicate-value edge case.
+Test Case 2 (edge case):
+Input: nums = [3,3], target = 6
+Expected Output: [0,1]
+*/
